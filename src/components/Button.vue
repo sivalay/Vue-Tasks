@@ -1,5 +1,5 @@
 <template>
-  <button @click="emits('click', text)">
+  <button @click="handleText">
     <i v-if="icon" :class="icon"></i>
     <span>{{ text }}</span>
   </button>
@@ -14,6 +14,10 @@ const props = defineProps<{
 const emits = defineEmits<{
   (event: 'click', text: string): void
 }>()
+
+function handleText() {
+  emits('click', props.text)
+}
 </script>
 
 <style scoped>
