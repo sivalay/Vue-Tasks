@@ -1,18 +1,20 @@
 <template>
-  <button @click="handleButtonClick">{{ text }}</button>
+  <button @click="handleClick">{{ text }}</button>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
   text: string
+  onClick: () => void
 }>()
 
 const emits = defineEmits<{
-  (event: 'click'): void
+  (event: 'click', text: string): void
+  // (event: 'click', onclick: number): void
 }>()
 
-function handleButtonClick() {
-  emits('click')
+function handleClick() {
+  emits('click', props.text)
 }
 </script>
 

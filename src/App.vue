@@ -1,14 +1,10 @@
 <template>
   <main>
     <h1>Number Operations</h1>
-    <input-view />
-    <!-- <button-wrap /> -->
+    <input-wrap />
   </main>
 </template>
 
 <script setup lang="ts">
-import InputView from './components/InputView.vue'
-// import ButtonWrap from './components/ButtonWrap.vue'
+import InputWrap from './components/InputWrap.vue'
 </script>
-
-<style scoped></style>
