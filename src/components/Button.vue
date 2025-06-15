@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleText">
+  <button @click="handleButtonClick">
     <i v-if="icon" :class="icon"></i>
     <span>{{ text }}</span>
   </button>
@@ -15,7 +15,7 @@ const emits = defineEmits<{
   (event: 'click', text: string): void
 }>()
 
-function handleText() {
+function handleButtonClick() {
   emits('click', props.text)
 }
 </script>
