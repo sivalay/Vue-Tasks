@@ -13,7 +13,7 @@
       <active-button text="+" :onClick="addNumbers" />
       <active-button text="-" :onClick="subtractNumbers" />
       <active-button text="÷" :onClick="divideNumbers" />
-      <active-button text="×" :onClick="multiplyNumbers" />
+      <active-button text="×" :onClick.stop="multiplyNumbers" />
     </div>
     <p>The result: {{ result }}</p>
   </form>
@@ -25,8 +25,7 @@ import { computed, ref } from 'vue'
 
 const number1 = ref<number>(0)
 const number2 = ref<number>(0)
-// const text = ref<string>('')
-const result = ref<number>()
+const result = ref<number>(0)
 
 function addNumbers() {
   result.value = number1.value + number2.value
