@@ -10,7 +10,6 @@ const props = defineProps<{
 
 const emits = defineEmits<{
   (event: 'click', text: string): void
-  // (event: 'click', onclick: number): void
 }>()
 
 function handleClick() {

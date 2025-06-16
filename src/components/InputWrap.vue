@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import ActionButton from './ActionButton.vue'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 const number1 = ref<number>(0)
 const number2 = ref<number>(0)
@@ -43,10 +43,6 @@ function divideNumbers() {
   result.value = number1.value / number2.value
   console.log(result.value)
 }
-
-// const calculation = computed<number>(() => {
-//   return result.value
-// })
 </script>
 
 <style scoped>
@@ -64,5 +60,6 @@ form {
 }
 p {
   display: block;
+  padding: 10px;
 }
 </style>
