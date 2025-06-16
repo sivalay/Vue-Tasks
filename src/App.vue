@@ -1,5 +1,9 @@
-<template>Hello</template>
+<template>
+  <main>
+    <button-wrapp />
+  </main>
+</template>
 
-<script setup lang="ts"></script>
-
-<style scoped></style>
+<script setup lang="ts">
+import ButtonWrapp from './components/ButtonWrapp.vue'
+</script>
