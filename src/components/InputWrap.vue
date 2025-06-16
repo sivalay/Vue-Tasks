@@ -1,5 +1,5 @@
 <template>
-  <form action="">
+  <form action="" @submit.prevent>
     <label for="">
       First Number :
       <input v-model="number1" type="number" name="first-number" id="" />
@@ -10,17 +10,17 @@
     </label>
     <!-- <button-wrap /> -->
     <div class="button-wrap">
-      <active-button text="+" :onClick="addNumbers" />
-      <active-button text="-" :onClick="subtractNumbers" />
-      <active-button text="÷" :onClick="divideNumbers" />
-      <active-button text="×" :onClick.stop="multiplyNumbers" />
+      <action-button text="+" :onClick="addNumbers" />
+      <action-button text="-" :onClick="subtractNumbers" />
+      <action-button text="÷" :onClick="divideNumbers" />
+      <action-button text="×" :onClick="multiplyNumbers" />
     </div>
-    <p>The result: {{ result }}</p>
   </form>
+  <p>The result: {{ result }}</p>
 </template>
 
 <script setup lang="ts">
-import ActiveButton from './ActiveButton.vue'
+import ActionButton from './ActionButton.vue'
 import { computed, ref } from 'vue'
 
 const number1 = ref<number>(0)
@@ -32,15 +32,15 @@ function addNumbers() {
   console.log(result.value)
 }
 function multiplyNumbers() {
-  result.value = number1.value + number2.value
+  result.value = number1.value * number2.value
   console.log(result.value)
 }
 function subtractNumbers() {
-  result.value = number1.value + number2.value
+  result.value = number1.value - number2.value
   console.log(result.value)
 }
 function divideNumbers() {
-  result.value = number1.value + number2.value
+  result.value = number1.value / number2.value
   console.log(result.value)
 }
 
@@ -61,5 +61,8 @@ form {
   display: flex;
   flex-flow: column;
   gap: 10px;
+}
+p {
+  display: block;
 }
 </style>
