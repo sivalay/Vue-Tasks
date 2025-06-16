@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleButtonClick">
+  <button @click="handleButtonClick" :class="className">
     <i v-if="icon" :class="icon"></i>
     <span>{{ text }}</span>
   </button>
@@ -9,6 +9,7 @@
 const props = defineProps<{
   text: string
   icon: string
+  className: string
 }>()
 
 const emits = defineEmits<{

@@ -1,9 +1,14 @@
 <template>
   <h1>Button Component</h1>
   <div class="button-container">
-    <Button text="Reply" icon="pi pi-angle-left" @click="showAlertMessage" />
-    <Button text="Reply all" icon="pi pi-angle-double-left" @click="showAlertMessage" />
-    <Button text="Forward" icon="pi pi-arrow-right" @click="showAlertMessage" />
+    <Button text="Reply" icon="pi pi-angle-left" class-name="" @click="showAlertMessage" />
+    <Button
+      text="Reply all"
+      icon="pi pi-angle-double-left"
+      class-name=""
+      @click="showAlertMessage"
+    />
+    <Button text="Forward" icon="pi pi-arrow-right" class-name="" @click="showAlertMessage" />
   </div>
 </template>
 
@@ -11,7 +16,7 @@
 import Button from './Button.vue'
 
 function showAlertMessage(text: string) {
-  alert(`You've clicked the '${text}' button`)
+  alert("You've clicked the demo button")
 }
 </script>
 
@@ -20,5 +25,8 @@ function showAlertMessage(text: string) {
   display: flex;
   gap: 10px;
   align-items: center;
+}
+.color-text {
+  color: red;
 }
 </style>
