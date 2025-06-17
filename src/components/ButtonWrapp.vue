@@ -2,12 +2,7 @@
   <h1>Button Component</h1>
   <div class="button-container">
     <Button text="Reply" icon="pi pi-angle-left" @click="showAlertMessage" />
-    <Button
-      text="Reply all"
-      icon="pi pi-angle-double-left"
-      class-name=""
-      @click="showAlertMessage"
-    />
+    <Button text="Reply all" icon="pi pi-angle-double-left" @click="showAlertMessage" />
     <Button text="Forward" icon="pi pi-arrow-right" class-name="" @click="showAlertMessage" />
   </div>
 </template>
