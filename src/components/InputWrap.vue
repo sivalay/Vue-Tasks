@@ -2,25 +2,24 @@
   <form action="" @submit.prevent>
     <label for="">
       First Number :
-      <input v-model="number1" type="number" name="first-number" id="" />
+      <input v-model="number1" type="text" name="first-number" id="" />
     </label>
     <label for="">
       Second Number :
-      <input v-model="number2" type="number" name="second-number" id="" />
+      <input v-model="number2" type="text" name="second-number" id="" />
     </label>
-    <!-- <button-wrap /> -->
     <div class="button-wrap">
-      <action-button text="+" :onClick="addNumbers" />
-      <action-button text="-" :onClick="subtractNumbers" />
-      <action-button text="÷" :onClick="divideNumbers" />
-      <action-button text="×" :onClick="multiplyNumbers" />
+      <Button text="+" @click="addNumbers" />
+      <Button text="-" @click="subtractNumbers" />
+      <Button text="÷" @click="divideNumbers" />
+      <Button text="×" @click="multiplyNumbers" />
     </div>
   </form>
   <p>The result: {{ result }}</p>
 </template>
 
 <script setup lang="ts">
-import ActionButton from './ActionButton.vue'
+import Button from './Button.vue'
 import { ref } from 'vue'
 
 const number1 = ref<number>(0)
@@ -28,20 +27,16 @@ const number2 = ref<number>(0)
 const result = ref<number>(0)
 
 function addNumbers() {
-  result.value = number1.value + number2.value
-  console.log(result.value)
+  result.value = Number(number1.value) + Number(number2.value)
 }
 function multiplyNumbers() {
-  result.value = number1.value * number2.value
-  console.log(result.value)
+  result.value = Number(number1.value) * Number(number2.value)
 }
 function subtractNumbers() {
-  result.value = number1.value - number2.value
-  console.log(result.value)
+  result.value = Number(number1.value) - Number(number2.value)
 }
 function divideNumbers() {
-  result.value = number1.value / number2.value
-  console.log(result.value)
+  result.value = Number(number1.value) / Number(number2.value)
 }
 </script>
 
@@ -52,6 +47,7 @@ input {
 form {
   display: flex;
   gap: 10px;
+  font-size: 20px;
 }
 .button-wrap {
   display: flex;
@@ -61,5 +57,6 @@ form {
 p {
   display: block;
   padding: 10px;
+  font-size: 20px;
 }
 </style>
