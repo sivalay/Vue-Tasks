@@ -1,22 +1,23 @@
 <template>
-  <button @click="handleButtonClick">
-    <i v-if="icon" :class="icon"></i>
-    <span>{{ text }}</span>
+  <button @click="handleButtonClick" :class="className">
+    <i v-if="icon" :class="icon" />
+    <span v-if="text">{{ text }}</span>
   </button>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  text: string
-  icon: string
+  text?: string
+  icon?: string
+  className?: string
 }>()
 
 const emits = defineEmits<{
-  (event: 'click', text: string): void
+  (event: 'click'): void
 }>()
 
 function handleButtonClick() {
-  emits('click', props.text)
+  emits('click')
 }
 </script>
 

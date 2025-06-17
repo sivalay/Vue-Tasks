@@ -10,8 +10,8 @@
 <script setup lang="ts">
 import Button from './Button.vue'
 
-function showAlertMessage(text: string) {
-  alert(`You've clicked the '${text}' button`)
+function showAlertMessage() {
+  alert(`You've clicked the button`)
 }
 </script>
 
