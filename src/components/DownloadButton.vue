@@ -1,33 +1,24 @@
 <template>
-  <div class="download-wrap">
-    <Button
-      text=""
-      icon="pi pi-arrow-down"
-      class-name="text-col border-raduis"
-      @click="showAlertMessage"
-    />
+  <div class="download-button-wrap">
+    <Button icon="pi pi-arrow-down" class-name="download-button" @click="showAlertMessage" />
   </div>
 </template>
 
 <script setup lang="ts">
 import Button from './Button.vue'
 
-function showAlertMessage(text: string) {
-  alert(`You've clicked the ${text} button`)
+function showAlertMessage() {
+  alert(`You've clicked the Download button`)
 }
 </script>
 
 <style scoped>
-.download-wrap {
+.download-button-wrap {
   margin-top: 50px;
 }
-.text-col {
+.download-button {
   color: red;
-}
-.border-raduis {
   border-radius: 10px;
-}
-button {
   gap: 0px;
 }
 </style>
