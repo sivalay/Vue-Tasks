@@ -13,15 +13,11 @@ const props = defineProps<{
 }>()
 
 const emits = defineEmits<{
-  (event: 'click', text: string): void
+  (event: 'click'): void
 }>()
 
 function handleButtonClick() {
-  if (props.text) {
-    emits('click', props.text)
-  } else {
-    emits('click', '')
-  }
+  emits('click')
 }
 </script>
 
